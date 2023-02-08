@@ -1,0 +1,1 @@
+# Print absolute current path

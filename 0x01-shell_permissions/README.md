@@ -6,3 +6,4 @@
 - 4-empty: Create an empty file hello
 - 5-execute: Add execution permissions to the owner of the file
 6-multiple_permissions: Add write to owner, write to group and read to world
+- 7-everybody: Add execution permission to all groups

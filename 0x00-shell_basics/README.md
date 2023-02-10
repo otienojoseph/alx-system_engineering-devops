@@ -5,3 +5,4 @@
 - 14-copy_html: Copy all html files on the current dir to the parent dir
 - 100-lets_move: Move files and folders to /tmp/u
 - 101-lets_move: Remove files that end with ~
+- 102-tree: Create dir welcome, welocome/to, and welcome/to/school

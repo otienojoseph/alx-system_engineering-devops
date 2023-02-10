@@ -2,3 +2,4 @@
 - 11-lists: List files in current dir, parent dir and boot dir
 - 12-file_type: Print the file type of file
 - 13-symbolic_link: Create symlink to ls binary
+- 14-copy_html: Copy all html files on the current dir to the parent dir

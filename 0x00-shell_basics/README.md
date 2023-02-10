@@ -1,2 +1,3 @@
 - 10-back: Changes directory to the previous one
 - 11-lists: List files in current dir, parent dir and boot dir
+- 12-file_type: Print the file type of file

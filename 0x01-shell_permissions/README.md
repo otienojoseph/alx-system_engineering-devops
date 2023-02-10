@@ -8,3 +8,4 @@
 6-multiple_permissions: Add write to owner, write to group and read to world
 - 7-everybody: Add execution permission to all groups
 8-James_Bond: Add 007 permissions to file
+- 9-John_Doe: Add 753 file permissions

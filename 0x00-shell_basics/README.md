@@ -1,1 +1,2 @@
-# Print absolute current path
+- 0-current_working_directory: Print absolute current path
+- l-listit: Lists your current directory

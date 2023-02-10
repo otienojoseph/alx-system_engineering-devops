@@ -9,3 +9,4 @@
 - 7-everybody: Add execution permission to all groups
 8-James_Bond: Add 007 permissions to file
 - 9-John_Doe: Add 753 file permissions
+- 10-mirror_permissions: Remove execute permission on user, set read/write on group and set read on others

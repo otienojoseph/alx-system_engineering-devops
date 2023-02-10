@@ -3,3 +3,4 @@
 - 2-bring_me_home: Bring you to the home directory
 
 - 3-listfiles: List all files in long mode
+- 4-listmorefiles: List all files including hidden files

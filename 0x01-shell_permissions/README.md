@@ -4,3 +4,4 @@
 - 2-groups: Print groups
 - 3-new_owner: Change file ownership to betty
 - 4-empty: Create an empty file hello
+- 5-execute: Add execution permissions to the owner of the file

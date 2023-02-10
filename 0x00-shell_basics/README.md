@@ -5,3 +5,4 @@
 - 4-listmorefiles: List all files including hidden files
 - 5-listfilesdigitonly: List directories with user and group ID's displayed numerically
 - 6-firstdirectory: Create directory on the /tmp/ folder
+- 7-movethatfile: Move betty file from /tmp/ to /tmp/my_first_directory

@@ -1,10 +1,1 @@
-- 0-current_working_directory: Print absolute current path
-- l-listit: Lists your current directory
-- 2-bring_me_home: Bring you to the home directory
-- 3-listfiles: List all files in long mode
-- 4-listmorefiles: List all files including hidden files
-- 5-listfilesdigitonly: List directories with user and group ID's displayed numerically
-- 6-firstdirectory: Create directory on the /tmp/ folder
-- 7-movethatfile: Move betty file from /tmp/ to /tmp/my_first_directory
-- 8-firstdelete: Delete the betty file from /tmp/my_first_directory
-- 9-firstdeletion: Delete directory from /tmp/ folder
+- 10-back: Changes directory to the previous one

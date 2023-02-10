@@ -4,3 +4,4 @@
 - 13-symbolic_link: Create symlink to ls binary
 - 14-copy_html: Copy all html files on the current dir to the parent dir
 - 100-lets_move: Move files and folders to /tmp/u
+- 101-lets_move: Remove files that end with ~

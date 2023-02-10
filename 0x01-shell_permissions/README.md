@@ -3,3 +3,4 @@
 - 1-whoami: Print current user name
 - 2-groups: Print groups
 - 3-new_owner: Change file ownership to betty
+- 4-empty: Create an empty file hello

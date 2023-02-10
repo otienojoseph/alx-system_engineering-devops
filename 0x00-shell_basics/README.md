@@ -7,3 +7,4 @@
 - 101-lets_move: Remove files that end with ~
 - 102-tree: Create dir welcome, welocome/to, and welcome/to/school
 - 103-commas: List files and directories separated by commas
+- school.mgc: When used with 'file -m filename' it detects school files

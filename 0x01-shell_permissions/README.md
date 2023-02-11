@@ -14,3 +14,4 @@
 - 12-directory_permissions: Create my_dir on the current working dir
 - 13-change_group: Change group owner to school
 - 100-change_owner_and_group: Change owner and group of directory and sub-directories
+- 101-symbolic_link_permissions: Change owner and group of symlink in current working dir

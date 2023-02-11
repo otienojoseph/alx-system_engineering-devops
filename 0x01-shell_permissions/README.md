@@ -16,3 +16,4 @@
 - 100-change_owner_and_group: Change owner and group of directory and sub-directories
 - 101-symbolic_link_permissions: Change owner and group of symlink in current working dir
 - 103-Star_Wars: Run star wars on terminal
+- 102-if_only: Change ownership if file was owned by quillaume

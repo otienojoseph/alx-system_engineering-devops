@@ -13,3 +13,4 @@
 - 11-directories_permissions: Add execute permissions to all groups and all sub-dir on the current working dir
 - 12-directory_permissions: Create my_dir on the current working dir
 - 13-change_group: Change group owner to school
+- 100-change_owner_and_group: Change owner and group of directory and sub-directories

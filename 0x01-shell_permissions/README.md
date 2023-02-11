@@ -11,3 +11,4 @@
 - 9-John_Doe: Add 753 file permissions
 - 10-mirror_permissions: Remove execute permission on user, set read/write on group and set read on others
 - 11-directories_permissions: Add execute permissions to all groups and all sub-dir on the current working dir
+- 12-directory_permissions: Create my_dir on the current working dir

@@ -5,3 +5,6 @@
 - 2-hellofile: Print /etc/passwd
 - 3-twofiles: Display content of two files
 - 4-lastlines: Display last 10 lines of files
+
+- 22-users_and_homes: Display passwd file and sort by users
+

@@ -9,3 +9,4 @@
 - 22-users_and_homes: Display passwd file and sort by users
 
 - 6-third_line: Display the third line of a file
+- 7-file: Create file and put text in it

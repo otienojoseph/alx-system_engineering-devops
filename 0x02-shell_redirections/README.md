@@ -14,3 +14,4 @@
 - 9-duplicate_last_line: Duplicate last line
 - 10-no_more_js: Delete files of a specific extension recursively
 - 11-directories: Count all directories on the current directory and its sub-directories
+- 12-newest_files: Display 10 newest files

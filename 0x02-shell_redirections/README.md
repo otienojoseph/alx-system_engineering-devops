@@ -11,3 +11,4 @@
 - 6-third_line: Display the third line of a file
 - 7-file: Create file and put text in it
 - 8-cwd_state: Redirect stdout to file
+- 9-duplicate_last_line: Duplicate last line

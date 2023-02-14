@@ -12,3 +12,4 @@
 - 7-file: Create file and put text in it
 - 8-cwd_state: Redirect stdout to file
 - 9-duplicate_last_line: Duplicate last line
+- 10-no_more_js: Delete files of a specific extension recursively

@@ -23,3 +23,4 @@
 - 18-letteronly: Display all lines starting with a letter
 - 19-AZ: Replace characters
 - 20-hiago: Delete all occurences of character
+- 21-reverse: Reverse text

@@ -19,3 +19,4 @@
 - 14-findthatword: Display words that contain the word root
 - 15-countthatword: Display count of the word with the pattern
 - 16-whatsnext: Display 3 lines after pattern
+- 17-hidethisword: Display line that do not match pattern

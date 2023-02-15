@@ -16,3 +16,4 @@
 - 11-directories: Count all directories on the current directory and its sub-directories
 - 12-newest_files: Display 10 newest files
 - 13-unique: Print only words that appear once
+- 14-findthatword: Display words that contain the word root

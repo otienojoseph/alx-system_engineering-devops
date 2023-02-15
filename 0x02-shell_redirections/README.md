@@ -25,3 +25,4 @@
 - 20-hiago: Delete all occurences of character
 - 21-reverse: Reverse text
 - 100-empty_casks: Display empty files and directories
+- 101-gifs: Lists all the files with a .gif extension in the current directory

@@ -17,3 +17,4 @@
 - 12-newest_files: Display 10 newest files
 - 13-unique: Print only words that appear once
 - 14-findthatword: Display words that contain the word root
+- 15-countthatword: Display count of the word with the pattern

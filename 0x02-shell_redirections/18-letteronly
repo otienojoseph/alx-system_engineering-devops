@@ -1,2 +1,2 @@
 #!/bin/bash
-grep --extended-regexp --ignore-case "^\w" /etc/ssh/sshd_config
+grep --extended-regexp --ignore-case "^\w+" /etc/ssh/sshd_config

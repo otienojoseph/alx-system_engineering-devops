@@ -20,3 +20,4 @@
 - 15-countthatword: Display count of the word with the pattern
 - 16-whatsnext: Display 3 lines after pattern
 - 17-hidethisword: Display line that do not match pattern
+- 18-letteronly: Display all lines starting with a letter

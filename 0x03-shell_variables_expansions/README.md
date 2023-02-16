@@ -8,3 +8,4 @@
 - 5-local_variables: Print local variables and functions
 - 6-create_local_variable: Create local variable
 - 7-create_global_variable: Create a global variable
+- 8-true_knowledge: Add 128 to the global variable TRUEKNOWLEDGE

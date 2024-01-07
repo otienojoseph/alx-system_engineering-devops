@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def match_school(input)
-  regex = /^(\d{10})/
+  regex = /^(\d{11})/
 
   matches = input.scan(regex)
 

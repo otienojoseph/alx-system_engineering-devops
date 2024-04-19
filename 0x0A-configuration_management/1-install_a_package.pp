@@ -1,7 +1,5 @@
-#!/usr/bin/puppet
-# Script that installs flask
+# Install flask
 
-package { 'Flask':
-  ensure   => '2.1.0',
-  provider => 'pip3',
+exec { 'flask':
+  command => '/usr/bin/pip3 install flask==2.1.0',
   }

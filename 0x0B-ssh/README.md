@@ -3,3 +3,4 @@
 - 1-create_ssh_key_pair - Script that creates an RSA pair
 - 2-ssh_config - Configuration file for the local SSH client to enable us connect 
     without password
+- 100-puppet_ssh_config - Use puppet to make changes to our configuration file

@@ -7,7 +7,7 @@ file { '2-ssh_config':
     mode    => '0644',
     content => "
     Host custom
-        HostName 54.160.112.244
+        HostName 35.153.98.217
         User ubuntu
         IdentityFile ~/.ssh/school
         PasswordAuthentication no

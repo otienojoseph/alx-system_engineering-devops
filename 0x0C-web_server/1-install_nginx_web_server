@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Install Nginx
+sudo apt-get update
+sudo apt-get -y install nginx
+
+# configure firewall to allow access to the service
+# nginx registers itself as a service with 'ufw', our firewall, upon installation
+sudo ufw allow 'Nginx HTTP'
+
+# implement a check for configured firewall
+# implement a check for the web server
+
+IP=$(ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//' | awk 'NR==1')
+echo "Click this url http://$IP"
+
+# give USER permissions to edit file
+sudo chown -R "$USER":"$USER" /var/www/html
+# edit the file
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+
+

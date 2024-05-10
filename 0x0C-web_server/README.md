@@ -11,3 +11,4 @@
 1. 0-transfer_file - Script that transfers a file from our client to a servers
     `Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY`
 2. 1-install_nginx_web_server - Installs nginx
+3. 2-setup_a_domain_name - Register a domain

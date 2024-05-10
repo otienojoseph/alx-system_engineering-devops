@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Install Nginx
-
 sudo apt-get update
 sudo apt-get -y install nginx
 
@@ -8,10 +7,7 @@ sudo apt-get -y install nginx
 # nginx registers itself as a service with 'ufw', our firewall, upon installation
 sudo ufw allow 'Nginx HTTP'
 
-# give USER permissions to edit file
-sudo chown -R "$USER":"$USER" /var/www/html
-
 # edit the file
 echo "Hello World!" >/var/www/html/index.html
-
+# reload nginx server
 sudo service nginx reload

@@ -6,7 +6,7 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 
 # set up the ufw for HTTP
-sudo ufw allow 'HTTP'
+sudo ufw allow 'Nginx HTTP'
 
 # Add custom response header
 HEADER="\\\n\tadd_header X-Served-By $(hostname);\n"

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Script to add a custom Nginx response header
+
+# Install nginx on web-01 server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# Add custom response header
+HEADER="\\\n\tadd_header X-Served-By $(hostname);\n"
+
+CHECK_FOR_X_SERVED_BY=$(grep "X-Served-By" /etc/nginx/sites-available/default)
+if [[ -z $CHECK_FOR_X_SERVED_BY ]]; then
+	sudo sed -i "24i $HEADER" /etc/nginx/sites-available/default
+fi
+
+# set $USER to be the owner of the file
+sudo chown -R "$USER":"$USER" /var/www/
+
+echo "Hello World!" >/var/www/html/index.html
+
+sudo nginx -t
+
+sudo service nginx restart

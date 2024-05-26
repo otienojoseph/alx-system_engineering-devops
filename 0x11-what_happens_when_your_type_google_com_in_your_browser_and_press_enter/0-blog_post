@@ -1,0 +1,59 @@
+# What happens when you type https://www.google.com in your browser and press Enter?
+
+## Introduction
+
+When you type a destination address into your web browser and press enter, a complex series of events takes place behind the scenes to retrieve and display the desired webpage. This process involves multiple layers of internet architecture and protocols, ensuring that your request is efficiently and securely handled. From the initial DNS resolution to the final rendering of the webpage, each step plays a crucial role in delivering the content. This introduction will provide an overview of key concepts such as DNS requests, TCP/IP, firewalls, HTTPS/SSL, load balancers, web servers, application servers, and databases, illustrating the journey of your web request from your browser to the destination server and back. Understanding these steps can demystify the magic of web browsing and provide insight into the technology that powers the internet.
+
+### Overview of what will be covered
+
+- DNS requests
+- TCP/IP
+- Firewall
+- HTTPS/SSL
+- Load Balancers
+- Web Servers
+- Application Servers
+- Database
+
+When a user types a *url* int the browser several things happen:
+
+1. **Browser Cache Check**: The browser checks it’s *cache* for the *DNS record*
+    - If found, we use the cached IP address
+    - If not found, we proceed to the next step
+2. **DNS Resolution**:
+    1. **Local DNS Cache Check**: The operating system checks its local DNS cache
+        - If found, use the cached IP address
+        - If not found, proceed to the next step
+    2. **DNS Query**: The request is sent to the configured DNS server(usually provided by the ISP)
+        - **Root DNS Server**: The DNS server queries a root DNS server if it doesn’t know the IP address
+        - **TLD Server**: The root DNS directs the query to the Top-Level-Domain server eg ‘.com, .net’
+        - **Authoritative Server**: The TLD server directs the query to the authoritative DNS server for the domain
+        - **IP Address Resolution**: The authoritative DNS server responds with the IP address.
+3. **Establish TCP Connection**:
+    - **TCP Handshake**: The browser establishes a TCP connection with the *web server* using a *three-way* handshake (SYN, SYN-ACK, ACK).
+4. **Firewall Check**: The request passes through firewalls that check for security rules and policies
+5. **HTTPS/SSL Handshake**:
+    - **SSL/TLS Negotiation**: If the URL uses HTTPS, the browser and server perform an SSL/TLS handshake to establish a secure connection.
+    - **Certificate Verification**: The server sends it’s SSL certificate to the browser for verification.
+    - **Session Key Establishment**: Once verified, a secure session key is established for *encrypted communication*.
+6. **Load Balancer**:
+    - **Request Routing**: The request is forwarded to a *load balancer* if the web service uses load balancing to distribute traffic across multiple servers.
+    - **Server Selection**: The load balancer selects an appropriate web server based on its algorithm (eg round-robin, least connection)
+7. **Web Server**:
+    - **Request Handling**: The web server (eg Apache, Nginx) receives the request and processes it.
+    - **Static Content**: If the request if for static content(eg HTML, CSS, Images) the web server serves it directly.
+    - **Application Server**: If the request if for *dynamic content* the request if forwarded to an application server.
+8. **Application Server**:
+    - **Business Logic Processing**: The application server (eg Node.js, PHP, Django) executes the business logic and processes the request.
+    - **Database Query**: If needed, the application server queries the database.
+9. **Database**:
+    - **Data Retrieval**: The database (eg MYSQL, MongoDB, PostgreSQL) retrieves the requested data and sends it back to the application server
+10. **Response Assembly**:
+    - **Data Processing**: The application server processes the data and assembles the response
+    - **Response Delivery** The *application server* sends the response back to the *web server*
+11. **Response Transmission**:
+    - **Web Server Response**: The server sends the response back to the load balancer.
+    - **Load Balancer Forwarding**: The load balancer forwards the response back to the users browser.
+12. **Browser Rendering**: The browser receives the response and renders the webpage.
+
+The browser then makes any additional requests for resources (eg Images, HTML, CSS) following the same process

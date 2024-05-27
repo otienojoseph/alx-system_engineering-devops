@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Configure nginx server to redirect '/redirect_me' page permanently
+
+sudo apt update
+sudo apt install nginx -y
+sudo ufw allow 'Nginx HTTP'
+
+sudo sed -i '56i \\n\tlocation \/redirect_me \{\n\t\treturn 301;\n\t\}\n' /etc/nginx/sites-available/default
+
+sudo service nginx start

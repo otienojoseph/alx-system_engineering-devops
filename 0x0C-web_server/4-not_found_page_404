@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Configure nginx server to redirect '/redirect_me' page permanently
+
+sudo apt update
+sudo apt install nginx -y
+sudo ufw allow 'Nginx HTTP'
+
+# create a custom 404 page
+echo "Ceci n'est pas une page" >>/var/www/html/404.html
+
+CHECK_FOR_404=$(grep "error_page" /etc/nginx/sites-available/default)
+if [[ -z $CHECK_FOR_404 ]]; then
+	sudo sed -i '56i \\n\terror_page 404 /404.html;\n' /etc/nginx/sites-available/default
+fi
+
+sudo service nginx start

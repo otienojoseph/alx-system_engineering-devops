@@ -9,10 +9,10 @@ sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 
 # give user write permissions
-sudo chown -R "$USER":"$USER" /var/www/
+# sudo chown -R "$USER":"$USER" /var/www/
 
 # edit the file
-echo "Hello World!" >/var/www/html/index.nginx-debian.html
+echo "Hello World!" >/var/www/html/index.html
 
 #reload nginx server
 sudo service nginx reload

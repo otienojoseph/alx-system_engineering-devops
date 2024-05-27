@@ -12,7 +12,7 @@ sudo ufw allow 'Nginx HTTP'
 # sudo chown -R "$USER":"$USER" /var/www/
 
 # edit the file
-echo "Hello World!" >/var/www/html/index.html
+echo 'Hello World!' >/var/www/html/index.html
 
 #reload nginx server
 sudo service nginx reload

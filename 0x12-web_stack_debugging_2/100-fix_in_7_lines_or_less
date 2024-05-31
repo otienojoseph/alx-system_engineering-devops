@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx and configure to run as previledge user not root user
-chmod 777 "/etc/nginx/nginx.conf"
-pkill apache2
-sed -i 's/^user .*/user nginx;/g' "/etc/nginx/nginx.conf"
-sed -i 's/listen 80 default_server;/listen 8080 default_server;/g' /etc/nginx/sites-available/default
+sudo chmod 777 "/etc/nginx/nginx.conf"
+sudo pkill apache2
+sudo sed -i 's/^user .*/user nginx;/g' "/etc/nginx/nginx.conf"
+sudo sed -i 's/listen 80;/listen 8080;/g' /etc/nginx/sites-available/default
 sudo -u nginx service nginx start

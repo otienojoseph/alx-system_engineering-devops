@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Install nginx and configure to run as previledge user
+# not root user
+
+if [ "$EUID" -ne 0 ]; then
+    echo "Run as root"
+    exit 1
+fi
+
+# install nginx if not installed
+if ! command -v nginx &> /dev/null; then
+    echo "Installing nginx"
+    apt update
+    apt install -y nginx
+else
+    echo "Nginx already installed!"
+fi
+
+# ensure nginx user exists
+if ! id -u nginx &> /dev/null; then
+    echo "creating user nginx"
+    useradd -r -s /sbin/nologin nginx
+else
+    echo "nginx user already exists"
+fi
+
+# update Nginx configuration
+NGINX_CONFIG="/etc/nginx/nginx.conf"
+if [ -f "$NGINX_CONFIG" ]; then
+    echo "configuring Nginx to run as user and listen on port 8080"
+    sed -i 's/^user .*/user nginx;/g' "$NGINX_CONFIG"
+    sed -i 's/listen 80 default_server;/listen 8080 default_server;/g' /etc/nginx/sites-available/default
+    sed -i 's/listen \[::\]:80 default_server;/listen [::]:8080 default_server;/g' /etc/nginx/sites-available/default
+else
+    echo "Nginx cofiguration not found!"
+fi
+
+# ensure proper permissions are given to the necessary directories
+chown -R nginx:nginx /var/log/nginx/
+chown -R nginx:nginx /var/lib/nginx/
+chown -R nginx:nginx /var/www/html/
+
+# restart nginx
+systemctl restart nginx

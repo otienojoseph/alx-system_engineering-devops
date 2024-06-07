@@ -6,10 +6,6 @@ sudo add-apt-repository ppa:vbernat/haproxy-2.9
 
 sudo apt-get install haproxy=2.9.\*
 
-# enable the service
-sudo systemctl enable haproxy.service
-sudo systemctl start haproxy.service
-
 CONFIG="\\\nfrontend lb-01\n\
     \tbind *:80\n\
     \tmode http\n\
@@ -23,3 +19,7 @@ CONFIG="\\\nfrontend lb-01\n\
 if [[ -e /etc/haproxy/haproxy.cfg ]]; then
 	sudo sed -i "36i $CONFIG" /etc/haproxy/haproxy.cfg
 fi
+
+# enable the service
+sudo systemctl enable haproxy.service
+sudo systemctl start haproxy.service

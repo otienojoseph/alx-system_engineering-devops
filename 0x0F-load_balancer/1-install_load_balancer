@@ -4,25 +4,23 @@
 apt-get install --no-install-recommends software-properties-common
 add-apt-repository ppa:vbernat/haproxy-2.9
 
-apt-get install haproxy=2.9.\*
+apt-get update
+apt-get -y install haproxy=2.9.\*
 
-balancer_command=$(
-	cat <<EOF
+balancer_command="\
 frontend lb-01
-        bind *:80
+        bind :80
         mode http
         default_backend web_servers
+
 backend web_servers
         balance roundrobin
         server web1 35.153.194.40:80 check
         server web2 34.229.72.29:80 check
-EOF
-)
+"
 
-if [[ -e /etc/haproxy/haproxy.cfg ]]; then
-	sed -i "35i $balancer_command" /etc/haproxy/haproxy.cfg
-fi
+echo "$balancer_command" >>/etc/haproxy/haproxy.cfg
 
 # enable the service
-systemctl enable haproxy.service
-systemctl restart haproxy.service
+sudo systemctl enable haproxy.service
+sudo systemctl restart haproxy.service

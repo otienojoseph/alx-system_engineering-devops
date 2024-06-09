@@ -8,14 +8,14 @@ sudo apt-get update
 sudo apt-get -y install haproxy=2.9.\*
 
 balancer_command="\
-\\nfrontend lb-01\n\
+\\\nfrontend lb-01\n\
         bind :80\n\
         mode http\n\
         default_backend web_servers\n\n\
 backend web_servers\n\
         balance roundrobin\n\
-        server web1 35.153.194.40:80 check\n\
-        server web2 34.229.72.29:80 check
+        server 271204-web-01 35.153.194.40:80 check\n\
+        server 271204-web-02 34.229.72.29:80 check
 "
 
 sudo sed -i "35a $balancer_command" /etc/haproxy/haproxy.cfg

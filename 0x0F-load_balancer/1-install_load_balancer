@@ -11,8 +11,7 @@ sudo systemctl stop haproxy.service
 
 balancer_command="\
 \\nfrontend lb-01\n\
-        bind :80\n\
-        mode http\n\
+        bind *:80\n\
         default_backend web_servers\n\n\
 backend web_servers\n\
         balance roundrobin\n\

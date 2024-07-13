@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Bash script to get and display domain information
 
 fetch_domains_info() {
     local domain=$1
@@ -21,6 +22,11 @@ fetch_domains_info() {
 
 domain=$1
 subdomain=$2
+
+if [[ -z "$domain" ]]; then
+    echo "Domain name is mandatory"
+    exit 1
+fi
 
 if [[ -n "$subdomain" ]]; then
     fetch_domains_info "$domain" "$subdomain"

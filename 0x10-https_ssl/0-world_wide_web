@@ -11,10 +11,10 @@ fetch_domains_info() {
         fulldomain="${subdomain}.${domain}"
     fi
 
-    ip_addr=$(dig +short ${fulldomain})
-    record_type=$(dig $fulldomain | awk '/;; ANSWER SECTION:/ {getline; print $4}')
+    ip_addr=$(dig +short "${fulldomain}")
+    record_type=$(dig "$fulldomain" | awk '/;; ANSWER SECTION:/ {getline; print $4}')
 
-    if [[ -n ip_addr ]]; then
+    if [[ -n "$ip_addr" ]]; then
         echo "The subdomain ${subdomain} is a ${record_type} record and points to ${ip_addr}"
     fi
 }

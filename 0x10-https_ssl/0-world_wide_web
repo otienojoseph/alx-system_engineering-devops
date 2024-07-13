@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+fetch_domains_info() {
+    local domain=$1
+    local subdomain=$2
+
+    if [[ "$subdomain" == *"$domain" ]]; then
+        fulldomain="$subdomain"
+        subdomain="${subdomain%%.*}"
+    else
+        fulldomain="${subdomain}.${domain}"
+    fi
+
+    ip_addr=$(dig +short ${fulldomain})
+    record_type=$(dig $fulldomain | awk '/;; ANSWER SECTION:/ {getline; print $4}')
+
+    if [[ -n ip_addr ]]; then
+        echo "The subdomain ${subdomain} is a ${record_type} record and points to ${ip_addr}"
+    fi
+}
+
+domain=$1
+subdomain=$2
+
+if [[ -n "$subdomain" ]]; then
+    fetch_domains_info "$domain" "$subdomain"
+else
+    for sub in www lb-01 web-01 web-02; do
+        fetch_domains_info "$domain" "$sub"
+    done
+fi

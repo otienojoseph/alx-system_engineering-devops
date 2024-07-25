@@ -14,3 +14,39 @@ Requirements:
         - 80 (HTTP)
     - Share the ufw commands that you used in your answer file
 
+1. Port forwarding
+Firewalls can not only filter requests, they can also forward them.
+
+Requirements:
+
+    - Configure web-01 so that its firewall redirects port 8080/TCP to port 80/TCP.
+    - Your answer file should be a copy of the ufw configuration file that you modified to make this happen
+
+Terminal in web-01:
+```
+root@03-web-01:~# netstat -lpn
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      2473/nginx
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      978/sshd
+tcp6       0      0 :::80                   :::*                    LISTEN      2473/nginx
+tcp6       0      0 :::22                   :::*                    LISTEN      978/sshd
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           594/dhclient
+udp        0      0 0.0.0.0:54432           0.0.0.0:*                           594/dhclient
+udp6       0      0 :::32563                :::*                                594/dhclient
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path
+unix  2      [ ACC ]     SEQPACKET  LISTENING     7175     433/systemd-udevd   /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     6505     1/init              @/com/ubuntu/upstart
+unix  2      [ ACC ]     STREAM     LISTENING     8048     741/dbus-daemon     /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     8419     987/acpid           /var/run/acpid.socket
+root@03-web-01:~#
+root@03-web-01:~# grep listen /etc/nginx/sites-enabled/default
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+#   listen 8000;
+#   listen somename:8080;
+#   listen 443;
+root@03-web-01:~#
+```

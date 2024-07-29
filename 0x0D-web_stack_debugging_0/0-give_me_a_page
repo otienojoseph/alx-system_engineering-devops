@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install apache and get it to return the string "Holberton School"
 
-sudo apt update
-sudo apt install apache2
-sudo service apache2 start
+apt update
+apt install apache2
+service apache2 start
 echo "Hello Holberton" > /var/www/html/index.html

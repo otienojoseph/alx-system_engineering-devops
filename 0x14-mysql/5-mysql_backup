@@ -8,14 +8,12 @@ fi
 
 MYSQL_PASSWORD=$1
 
-if ! mysqldump --user=root --password="$MYSQL_PASSWORD" --all-databases >backup.sql; then
+if ! mysqldump --user root --password="$MYSQL_PASSWORD" --all-databases >backup.sql; then
     echo "Failed to create backup"
     exit 1
 fi
 
-DATE=$(date +%d-%m-%Y)
-
-if ! tar -czf "$DATE".tar.gz backup.sql; then
+if ! tar -czf "$(date +%d-%m-%Y)".tar.gz backup.sql; then
     echo "Compression failed"
     exit 1
 fi

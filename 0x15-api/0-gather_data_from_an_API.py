@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-# Script that returns information about a users TODO lists progress
+'''Python script to get data'''
 import requests
 import sys
 
 
 def get_employee_data(employee_id):
+    '''
+    Script that returns information about a users TODO list progress
+    '''
     base = 'https://jsonplaceholder.typicode.com'
 
     user_url = '{}/users/{}'.format(base, employee_id)

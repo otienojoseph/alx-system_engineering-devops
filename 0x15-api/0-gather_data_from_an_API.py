@@ -24,8 +24,9 @@ def get_employee_data(employee_id):
     tasks_response = requests.get(tasks_url)
     tasks_todos = tasks_response.json()
 
-    completed_tasks = [task for task in tasks_todos if task.get('completed')]
-    total_tasks = len(completed_tasks)
+    completed_tasks = [task for task in tasks_todos if task.get(
+        'completed') is True]
+    total_tasks = len(tasks_todos)
     print("Employee {} is done with tasks({}/{})".format(
         user_name, len(completed_tasks), total_tasks
     ))

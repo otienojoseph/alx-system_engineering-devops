@@ -27,7 +27,7 @@ def get_employee_data(employee_id):
     completed_tasks = [task for task in tasks_todos if task.get(
         'completed') is True]
     total_tasks = len(tasks_todos)
-    print("Employee {} is done with tasks({}/{})".format(
+    print("Employee {} is done with tasks({}/{}):".format(
         user_name, len(completed_tasks), total_tasks
     ))
 

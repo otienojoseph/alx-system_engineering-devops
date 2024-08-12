@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 '''Python script to get data'''
+import csv
 import requests
 import sys
-import csv
 
 
 def get_employee_data(employee_id):

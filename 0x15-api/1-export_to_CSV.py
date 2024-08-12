@@ -33,7 +33,7 @@ def get_employee_data(employee_id):
     with open(csv_file, mode='w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
     #   write the header
-        writer.writeheader()
+        # writer.writeheader()
     #   write the data in rows
         for row in tasks_todos:
             writer.writerow({

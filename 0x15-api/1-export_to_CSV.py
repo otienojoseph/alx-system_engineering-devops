@@ -20,7 +20,6 @@ def get_employee_data(employee_id):
 
     user_data = user_response.json()
     user_name = user_data.get('name')
-    user_id = user_data.get('userId')
 
     tasks_url = '{}/todos?userId={}'.format(base, employee_id)
     tasks_response = requests.get(tasks_url)
@@ -38,7 +37,7 @@ def get_employee_data(employee_id):
     #   write the data in rows
         for row in tasks_todos:
             writer.writerow({
-                "USER_ID": user_id,
+                "USER_ID": row.get("userId"),
                 "USERNAME": user_name,
                 "TASK_COMPLETED_STATUS": row.get("completed"),
                 "TASK_TITLE": row.get("title"),

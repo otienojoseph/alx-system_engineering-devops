@@ -38,8 +38,7 @@ def get_employee_data(employee_id):
     #   write the data in rows
         for row in tasks_todos:
             writer.writerow({
-
-                "USER_ID": employee_id,
+                "USER_ID": user_id,
                 "USERNAME": user_name,
                 "TASK_COMPLETED_STATUS": row.get("completed"),
                 "TASK_TITLE": row.get("title"),

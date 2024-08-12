@@ -19,7 +19,7 @@ def get_employee_data(employee_id):
         exit()
 
     user_data = user_response.json()
-    user_name = user_data.get('name')
+    user_name = user_data.get('username')
 
     tasks_url = '{}/todos?userId={}'.format(base, employee_id)
     tasks_response = requests.get(tasks_url)

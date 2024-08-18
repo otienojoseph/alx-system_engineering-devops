@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Python script to get data'''
 import csv
+import io
 import requests
 import sys
 
@@ -27,13 +28,12 @@ def get_employee_data(employee_id):
 
     # csv to export to
     csv_file = "{}.csv".format(employee_id)
+
     # field names
     fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
     # writing to csv file
     with open(csv_file, mode='w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
-    #   write the header
-        # writer.writeheader()
     #   write the data in rows
         for row in tasks_todos:
             writer.writerow({
